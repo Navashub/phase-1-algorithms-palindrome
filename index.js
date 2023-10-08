@@ -1,14 +1,21 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  // Write your algorithm here 
+  const convertWordToArray = word.split('');
+  const inverseWordArray = [];
+  for (const letter of convertWordToArray){
+    inverseWordArray.unshift(letter);
+  }
+  const reversedWord = inverseWordArray.join('');
+
+  if (word === reversedWord) {
+    return true;
+  } else {
+    return false;
+  }
+
 }
 
-/* 
-  Add your pseudocode here
-*/
 
-/*
-  Add written explanation of your solution here
-*/
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
@@ -23,3 +30,5 @@ if (require.main === module) {
 }
 
 module.exports = isPalindrome;
+
+isPalindrome("racecar")
